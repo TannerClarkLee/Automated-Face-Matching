@@ -1,4 +1,6 @@
 
+%Make sure to have these images predetermed.  Choose four pictures of people that you find attractive!  
+%Make sure their nose is close to the center of the image.  Label them below.
 Im1=imread('J1.jpg');
 Im2=imread('J2.jpg');
 Im3=imread('J3.jpg');
@@ -35,16 +37,16 @@ U=normc(U);
 
 %Figures
 figure;
-RachelsMan=0;
+RM=0;
 for i = 1:n
     subplot(1,n,i)
     image=reshape(U(:,i),[120,120]);
     imshow(image,[0 0.002])
     w=(U(:,i))'*(A(:,i));
-    RachelsMan=w*U(:,1)+RachelsMan;
+    RM=w*U(:,1)+RM;
 end
 
 %Summed Figure
 subplot(1,2,1)
-image1=reshape(RachelsMan(:,1),[120,120]);
+image1=reshape(RM(:,1),[120,120]);
 imshow(image1,[-20,40])
